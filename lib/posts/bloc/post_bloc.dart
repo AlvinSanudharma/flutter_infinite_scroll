@@ -66,13 +66,13 @@ class PostBloc extends Bloc<PostEvent, PostState> {
 
       return body.map(
         (e) {
-          final map = Post.fromJson(e);
+          final model = Post.fromJson(e);
 
           return Post(
-            userId: map.userId,
-            id: map.id,
-            title: map.title,
-            body: map.body,
+            userId: model.userId,
+            id: model.id,
+            title: model.title,
+            body: model.body,
           );
         },
       ).toList();

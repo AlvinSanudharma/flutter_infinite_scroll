@@ -10,8 +10,12 @@ class PostPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocProvider(
-        create: (_) => PostBloc(dio: Dio())..add(const PostEvent.postFetched()),
+      body: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+              create: (_) =>
+                  PostBloc(dio: Dio())..add(const PostEvent.postFetched()))
+        ],
         child: const PostList(),
       ),
     );
