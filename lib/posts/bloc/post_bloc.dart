@@ -9,9 +9,9 @@ part 'post_event.dart';
 part 'post_state.dart';
 part 'post_bloc.freezed.dart';
 
-const throttleDuration = Duration(milliseconds: 100);
+const throttleDuration = Duration(milliseconds: 1500);
 
-const _postLimit = 20;
+const _postLimit = 10;
 
 EventTransformer<E> throttleDroppable<E>(Duration duration) {
   return (events, mapper) {
